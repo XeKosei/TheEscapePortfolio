@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Portfolio.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="the-escape-%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA"><strong>THE ESCAPE ポートフォリオ</strong></h1>
+<h2 id="%E6%B2%B3%E5%8E%9F%E9%9B%BB%E5%AD%90%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E5%B0%82%E9%96%80%E5%AD%A6%E6%A0%A1">河原電子ビジネス専門学校</h2>
+<h2 id="%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%AF%E3%83%AA%E3%82%A8%E3%82%A4%E3%82%BF%E3%83%BC%E7%A7%91-2%E5%B9%B4-%E4%B9%85%E4%B8%96-%E5%BA%B7%E6%99%B4">ゲームクリエイター科 2年 久世 康晴</h2>
+<hr>
+<h2 id="%E7%9B%AE%E6%AC%A1">目次</h2>
+<ul>
+<li>
+<p><a href="#%E4%BD%9C%E5%93%81%E6%A6%82%E8%A6%81">作品概要</a></p>
+</li>
+<li>
+<p><a href="#%E6%8B%85%E5%BD%93%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">担当ソースコード</a></p>
+</li>
+<li>
+<p><a href="#%E6%8A%80%E8%A1%93%E8%A6%81%E7%B4%A0">技術要素</a></p>
+<ul>
+<li><a href="#%E3%82%B9%E3%83%9D%E3%83%83%E3%83%88%E3%83%A9%E3%82%A4%E3%83%88%E3%81%AE%E5%BD%B1%E7%94%9F%E6%88%90">スポットライトの影生成</a></li>
+<li><a href="#%E8%B7%9D%E9%9B%A2%E3%83%95%E3%82%A9%E3%82%B0%E3%81%AB%E3%82%88%E3%82%8B%E6%9A%97%E9%97%87%E8%A1%A8%E7%8F%BE">距離フォグによる暗闇表現</a></li>
+<li><a href="#%E9%80%8F%E8%A6%96%E6%A9%9F%E8%83%BD%E3%81%AE%E3%82%B7%E3%83%AB%E3%82%A8%E3%83%83%E3%83%88%E6%8F%8F%E7%94%BB">透視機能のシルエット描画</a></li>
+<li><a href="#%E5%B7%9D%E7%80%AC%E5%BC%8F%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A0">川瀬式ブルーム</a></li>
+<li><a href="#PBR(%E3%83%95%E3%82%A3%E3%82%B8%E3%82%AB%E3%83%AB%E3%83%99%E3%83%BC%E3%82%B9%E3%83%89%E3%83%AC%E3%83%B3%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0)">PBR(フィジカルベースドレンダリング)</a></li>
+<li><a href="#%E7%9F%B3%E5%83%8F%E3%81%AE%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0">石像のシェーディング</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%A8%E3%81%97%E3%81%A6%E3%81%AE%E3%81%93%E3%81%A0%E3%82%8F%E3%82%8A%E3%83%BB%E5%B7%A5%E5%A4%AB">ゲームとしてのこだわり・工夫</a></p>
+<ul>
+<li>
+<p><a href="#%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E9%96%A2%E9%80%A3">サウンド関連</a></p>
+</li>
+<li>
+<p><a href="#%E3%82%B2%E3%83%BC%E3%83%A0%E9%80%B2%E8%A1%8C%E3%81%AB%E3%82%88%E3%82%8B%E9%81%8A%E3%81%B3%E6%96%B9%E3%81%AE%E9%81%B7%E7%A7%BB">ゲーム進行による遊び方の遷移</a></p>
+</li>
+<li>
+<p><a href="#%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B8%E3%81%AE%E8%A6%8B%E6%A0%84%E3%81%88">ステージの見栄え</a></p>
+</li>
+<li>
+<p><a href="#%E8%BF%91%E5%B9%B4%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%B8%E3%81%AE%E3%83%AA%E3%82%B9%E3%83%9A%E3%82%AF%E3%83%88%E3%81%A8%E5%BD%B1%E9%9F%BF%E5%8F%97%E3%81%91%E3%81%9F%E8%A6%81%E7%B4%A0">近年のゲームへのリスペクトと影響受けた要素</a></p>
+</li>
+<li>
+<p><a href="#%E3%81%82%E3%81%88%E3%81%A6%E5%AE%9F%E8%A3%85%E3%82%92%E3%82%84%E3%82%81%E3%81%9F%E8%A6%81%E7%B4%A0">あえて実装をやめた要素</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+<h1 id="%E4%BD%9C%E5%93%81%E6%A6%82%E8%A6%81">作品概要</h1>
+<h2 id="%E4%BD%9C%E5%93%81--the-escape">作品 : THE ESCAPE</h2>
+<p>ジャンル : ステルス&amp;ホラー脱出アドベンチャー(1人称視点)</p>
+<p>制作人数 : 1人</p>
+<p>制作期間 : 5ヵ月</p>
+<p><img src="Image/Title.png" alt="Title" /></p>
+<p>この作品は、不思議な懐中電灯を手に迷宮からの脱出を目指すゲームである。<br>
+見知らぬ部屋で目を覚ました主人公は、懐中電灯の明かりを頼りに探索を行う。<br>
+そんな中、暗闇から姿を現したのは”恐ろしい化け物”であった。</p>
+<h2 id="%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83">開発環境</h2>
+<p>エンジン : 学内エンジンを改造したエンジン(C++/DirectX12)</p>
+<p>プログラム : Visual Studio 2019</p>
+<p>3Dモデル : 3ds MAX</p>
+<p>エフェクト : Effekseer</p>
+<p>画像 : Adobe Photoshop</p>
+<p>バージョン管理 : Git Hub <a href="https://github.com/XeKosei/myGame">https://github.com/XeKosei/myGame</a></p>
+<p>タスク管理 : Redmine</p>
+<p>連絡 : Slack</p>
+<h1 id="%E6%8B%85%E5%BD%93%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">担当ソースコード</h1>
+<p><strong>エンジン部分</strong></p>
+<ul>
+<li>FontRender.cpp</li>
+<li>FontRender.h</li>
+<li>GaussianBlur.cpp</li>
+<li>GaussianBlur.h</li>
+<li>LightManager.cpp</li>
+<li>LightManager.h</li>
+<li>PointLight.cpp</li>
+<li>PointLight.h</li>
+<li>PostEffectManager.cpp</li>
+<li>PostEffectManager.h</li>
+<li>ResourceBankManager.cpp</li>
+<li>ResourceBankManager.h</li>
+<li>SkinModelRender.cpp</li>
+<li>SkinModelRender.h</li>
+<li>SkinModelRenderEX.cpp</li>
+<li>SkinModelRenderEX.h</li>
+<li>SpotLight.cpp</li>
+<li>SpotLight.h</li>
+<li>SpriteRender.cpp</li>
+<li>SpriteRender.h</li>
+</ul>
+<p><strong>背景</strong></p>
+<ul>
+<li>BackGround.cpp</li>
+<li>BackGround.h</li>
+<li>BackGroundInclude.h</li>
+<li>DeadSkeleton.cpp</li>
+<li>DeadSkeleton.h</li>
+<li>SecretRoom.cpp</li>
+<li>SecretRoom.h</li>
+<li>Statue.cpp</li>
+<li>Statue.h</li>
+</ul>
+<p><strong>エネミー</strong></p>
+<ul>
+<li>Enemy.cpp</li>
+<li>Enemy.h</li>
+<li>EnemyAnim.cpp</li>
+<li>EnemyAnim.h</li>
+<li>EnemyAttack.cpp</li>
+<li>EnemyAttcak.h</li>
+<li>EnemyChase.cpp</li>
+<li>EnemyChase.h</li>
+<li>EnemyConstant.h</li>
+<li>EnemyFlinch.cpp</li>
+<li>EnemyFlinch.h</li>
+<li>EnemyInclude.h</li>
+<li>EnemyMove.cpp</li>
+<li>EnemyMove.h</li>
+<li>EnemyScream.cpp</li>
+<li>EnemyScream.h</li>
+<li>EnemySearchPlayer.cpp</li>
+<li>EnemySearchPlayer.h</li>
+<li>EnemyStress.cpp</li>
+<li>EnemyStress.h</li>
+<li>EnemyVigilant.cpp</li>
+<li>EnemyVigilant.h</li>
+<li>EnemyVoice.cpp</li>
+<li>EnemyVoice.h</li>
+</ul>
+<p><strong>懐中電灯</strong></p>
+<ul>
+<li>AbilityClairvoyance.cpp</li>
+<li>AbilityClairvoyance.h</li>
+<li>AbilityMedousaEye.cpp</li>
+<li>AbilityMedousaEye.h</li>
+<li>AbilityStrobeFlash.cpp</li>
+<li>AbilityStrobeFlash.h</li>
+<li>FlashLight.cpp</li>
+<li>FlashLight.h</li>
+<li>FlashLightAction.cpp</li>
+<li>FlashLightAction.h</li>
+<li>FlashLightBattery.cpp</li>
+<li>FlashLightBattery.h</li>
+<li>FlashLightConstant.h</li>
+<li>FlashLightInclude.h</li>
+</ul>
+<p><strong>ゲームシーン</strong></p>
+<ul>
+<li>GameClaer.cpp</li>
+<li>GameClaer.h</li>
+<li>GameOver.cpp</li>
+<li>GameOver.h</li>
+<li>GameScene.cpp</li>
+<li>GameScene.h</li>
+<li>GameSceneConstant.cpp</li>
+<li>GameSceneInclude.h</li>
+</ul>
+<p><strong>ギミック</strong></p>
+<ul>
+<li>Chandelier.cpp</li>
+<li>Chandelier.h</li>
+<li>ChandelierManager.cpp</li>
+<li>ChandelierManager.h</li>
+<li>Door.cpp</li>
+<li>Door.h</li>
+<li>EyeWall.cpp</li>
+<li>EyeWall.h</li>
+<li>GimmickConstant.h</li>
+<li>GimmickInclude.h</li>
+</ul>
+<p><strong>アイテム</strong></p>
+<ul>
+<li>ItemBattery.cpp</li>
+<li>ItemBattery.h</li>
+<li>ItemConstant.h</li>
+<li>ItemFlashLightParts.cpp</li>
+<li>ItemFlashLightParts.h</li>
+<li>ItemInclude.h</li>
+<li>ItemKey.cpp</li>
+<li>ItemKey.h</li>
+<li>ItemMessagePaper.cpp</li>
+<li>ItemMessagePaper.h</li>
+<li>ItemTranquilizer.cpp</li>
+<li>ItemTranquilizer.h</li>
+</ul>
+<p><strong>プレイヤー</strong></p>
+<ul>
+<li>Player.cpp</li>
+<li>Player.h</li>
+<li>PlayerAction.cpp</li>
+<li>PlayerAction.h</li>
+<li>PlayerBitten.cpp</li>
+<li>PlayerBitten.h</li>
+<li>PlayerCamera.cpp</li>
+<li>PlayerCamera.h</li>
+<li>PlayerConstant.h</li>
+<li>PlayerInclude.h</li>
+<li>PlayerMove.cpp</li>
+<li>PlayerMove.h</li>
+<li>PlayerPouch.cpp</li>
+<li>PlayerPouch.h</li>
+<li>PlayerRead.cpp</li>
+<li>PlayerRead.h</li>
+<li>PlayerSanity.cpp</li>
+<li>PlayerSanity.h</li>
+<li>PlayerTarget.cpp</li>
+<li>PlayerTarget.h</li>
+<li>PlayerUI.cpp</li>
+<li>PlayerUI.h</li>
+</ul>
+<p><strong>TitleScene</strong></p>
+<ul>
+<li>TitleScene.cpp</li>
+<li>TitleScene.h</li>
+<li>TitleSceneConstant</li>
+</ul>
+<p><strong>fxファイル</strong></p>
+<ul>
+<li>Clairvoyance.fx</li>
+<li>GetDepth.fx</li>
+<li>model.fx</li>
+<li>PBR.fx</li>
+<li>postEffect.fx</li>
+<li>stoneModel.fx</li>
+<li>gaussianBlur.fx</li>
+</ul>
+<p><strong>改造したソースコード</strong></p>
+<ul>
+<li>GameObjectManager.cpp
+<ul>
+<li>スポットライトや透視用のモデルを描画するコードを追加。(50行目~)</li>
+</ul>
+</li>
+<li>RenderContext.h
+<ul>
+<li>レンダリングのステップを追加(17行目~)</li>
+</ul>
+</li>
+<li>Material.cpp
+<ul>
+<li>リソースバンク[<a href="#1">^1</a>]に対応するため、InitShaders()にコードの追加・変更を行った。(148行目~)</li>
+</ul>
+</li>
+<li>Material.h
+<ul>
+<li>リソースバンクに対応するため、データメンバのm_vsNonSkinModel、m_vsSkinModel、m_psModelをポインタに変更。(118行目~)</li>
+</ul>
+</li>
+<li>Model.cpp
+<ul>
+<li>tkmFileをリソースバンクに対応するためにコードの追加・変更を行った。(32行目~)</li>
+</ul>
+</li>
+<li>Model.h
+<ul>
+<li>モデルの初期化データの定数バッファやシェーダーリソースの拡張。(23行目~)</li>
+<li>リソースバンクに対応するため、データメンバのm_tkmFileをポインタに変更(102行目~)</li>
+</ul>
+</li>
+<li>MeshParts.cpp
+<ul>
+<li>InitFromTkmFile()とCreateDescriptorHeaps()を拡張した定数バッファとシェーダーリソースに対応させた。(61行目~)</li>
+</ul>
+</li>
+<li>MeshParts.h
+<ul>
+<li>InitFromTkmFile()の引数の定数バッファやシェーダーリソースの拡張(43行目~)</li>
+<li>データメンバの定数バッファとシェーダリソースを拡張。(123行目~)</li>
+</ul>
+</li>
+<li>Skeleton.h
+<ul>
+<li>Boneのワールド座標を取得する関数を追加。(127行目)</li>
+</ul>
+</li>
+<li>PhysicsStaticObject.h
+<ul>
+<li>PhysicsStaticObjectの剛体の位置と回転を設定する関数を追加。(39行目~)</li>
+</ul>
+</li>
+</ul>
+<p><span id="1" style="font-size:x-small">1: リソースバンクとは、同じファイルパスが呼び出されたときに、事前に読み込んで保存しておいたモデルやマテリアルを利用するというもの。何度も読み込む必要がなくなり、読み込み時間を早くすることができる。</span></p>
+<h1 id="%E6%8A%80%E8%A1%93%E8%A6%81%E7%B4%A0">技術要素</h1>
+<ul>
+<li>
+<h2 id="%E3%82%B9%E3%83%9D%E3%83%83%E3%83%88%E3%83%A9%E3%82%A4%E3%83%88%E3%81%AE%E5%BD%B1%E7%94%9F%E6%88%90-a-id%22%E3%82%B9%E3%83%9D%E3%83%83%E3%83%88%E3%83%A9%E3%82%A4%E3%83%88%E3%81%AE%E5%BD%B1%E7%94%9F%E6%88%90%22a">スポットライトの影生成 <a id="スポットライトの影生成"></a></h2>
+</li>
+</ul>
+<p>私は、&quot;THE ESCAPE&quot;を手掛ける上で&quot;<strong>バイオハザード7</strong>(以下バイオ7)&quot;を最も参考にしている。<br>
+バイオ7をプレイして私がとても印象に残ったのが、豊かな<strong>影の表現</strong>であった。<br>
+様々な方向から発せられている光に合わせて、方向、大きさ、色の強さがしっかりと反映されて影が映っており、とても感動したことを覚えている。<br>
+私が作ろうとしているゲームの肝は懐中電灯であったため、是非とも懐中電灯からのスポットライトで、バイオ7のような影を実現したいと私は考えた。</p>
+<p>スポットライト自体は、学校の授業で教わった方法で既に実装済みであった。<br>
+この話で重要な仕組みだけを簡単に説明すると、このスポットライトは、位置、色、射出方向、射出角度(射出した光の角度)、影響範囲(光が届く距離)の5つのデータを持っている。<br>
+それらのデータを用いて、スポットライトの範囲に入っている頂点のカラーを明るくするという処理を行っているのだ。<br>
+しかしそのままでは、<strong>遮蔽されているため現実では影になる場所も、明るく照らされる</strong>ことになってしまう。<br></p>
+<ul>
+<li>参考画像</li>
+</ul>
+<p><img src="Image/OldSpotLightAndText.png" alt="OldSpotLightAndText" /></p>
+<p>この問題を解決するために、私は<strong>デプスシャドウ</strong>の技術を応用することにした。<br>
+まずスポットライトの為のカメラ(スポットライトカメラ)を用意する。
+スポットライトカメラの位置、向き、画角、描画距離を、スポットライトの位置、射出方向、射出角度、影響範囲に合わせる。<br>
+ここで注意すべきなのは、画角と射出角度についてである。<br>
+カメラの画角は設定した角度の広さになるが、私のスポットライトの場合、実際のスポットライトの角度は、設定した射出角度値の2倍の広さになるのだ。<br>
+そうなる理由は、ピクセルシェーダーでのスポットライトの処理が「<strong>スポットライトから見たその頂点の位置が、スポットライトの射出方向と比較して射出角度以内に入っているならば明るく照らす</strong>」という処理だからだ。<br></p>
+<p>分かりにくいと思うが、下の画像を見ていただけるとイメージしやすいだろう。<br>
+画像の水色の部分が角度である。<br></p>
+<p>カメラの画角は、このように設定した角度の値になるのだが、</p>
+<p><img src="Image/SpotLightCameraAngle.png" alt="SpotLightCameraAngle" /></p>
+スポットライトでは、この部分が射出角度として使われているのだ。
+<p><img src="Image/SpotLightAngle.png" alt="SpotLightAngle" /></p>
+つまり、カメラの画角と射出角度を同じ値にしてしまうと、スポットライトの実際の角度は、カメラの画角の2倍になってしまうのだ。<br>
+そのため私のゲームでは、スポットライトの射出角度は、0.5倍してから設定するようにしている。<br>
+<p>さて話が逸れたが、スポットライトとスポットライトカメラのデータを揃えたら、次はスポットライトカメラから見た深度値を得て、<strong>深度テクスチャ</strong>を作る。<br></p>
+<ul>
+<li>上の画像のライトの位置からの深度テクスチャ。
+(分かりやすいように画像を補正している)</li>
+</ul>
+<p><img src="Image/SpotLightDepthBuffer.png" alt="SpotLightDepthBuffer" /></p>
+<p>この深度テクスチャを使って、ピクセルシェーダーのスポットライトの処理を書き加える。<br>
+加える内容は、<strong>スポットライトカメラからその頂点への距離と、深度テクスチャからの深度値を比較した結果によって、スポットライトの光を当てるかどうかを決める</strong>、という処理。<br></p>
+<p>ここで<strong>デプスシャドウとは少し異なる点</strong>がある。<br>
+デプスシャドウは「遮蔽されている場合、影を落とす」という仕組みなので、その頂点が<strong>深度値よりも奥ならば</strong>、影を落とすという処理を行うのだ。<br>
+しかしこの処理では、深度値より奥にある頂点全てに影を落としてしまうので、本来影が落ちえない筈の場所にも影が落ちてしまう場合があるのだ。<br>
+それに対して、このスポットライトの場合は逆に「<strong>遮蔽されていない場合、光を当てる</strong>」という処理を行っている。<br>
+つまり、頂点が<strong>深度値より手前のとき</strong>のみスポットライトの光を当てているのだ。<br></p>
+<p>こうすることで、深度値より奥の場所には光が当たらないため、結果的に影が生じるという仕組みである。<br>
+影を作ったのではなく、自然に生じる影なので、デプスシャドウのようにおかしな場所に影が落ちることもない。<br></p>
+<ul>
+<li>先程の画像とは違い、テーブルの下に影が落ちているのが分かる。</li>
+</ul>
+<p><img src="Image/DepthSpotLight.png" alt="DepthSpotLight" /></p>
+<ul>
+<li>懐中電灯の光と、天井の明かりからの光で、複数の影が落ちる。影が重なっている場所は、より暗い影になっているのが分かる。<br></li>
+</ul>
+<p><img src="Image/SpotLightShadow2.png" alt="SpotLightShadow2" /></p>
+<br>
+<hr>
+<ul>
+<li>
+<h2 id="%E8%B7%9D%E9%9B%A2%E3%83%95%E3%82%A9%E3%82%B0%E3%81%AB%E3%82%88%E3%82%8B%E6%9A%97%E9%97%87%E8%A1%A8%E7%8F%BE-a-id%22%E8%B7%9D%E9%9B%A2%E3%83%95%E3%82%A9%E3%82%B0%E3%81%AB%E3%82%88%E3%82%8B%E6%9A%97%E9%97%87%E8%A1%A8%E7%8F%BE%22a">距離フォグによる暗闇表現 <a id="距離フォグによる暗闇表現"></a></h2>
+</li>
+</ul>
+<p>このゲームの暗さの表現は、単にゲーム全体の明るさを下げているわけではない。<br>
+カメラからの距離が近い場所は明るく、遠い場所ほど暗く見えるという、簡易的な<strong>距離フォグ</strong>を実装している。<br>
+処理はカメラから<strong>遠い位置ほどカラーを暗くしていく</strong>というシンプルなものである。<br>
+しかしこれだけで、<strong>ゲーム画面自体を見づらくしたりはしないまま</strong>に、道の先が見通せない暗闇を表現することができるのだ。<br></p>
+<p>・フォグがない場合</p>
+<p><img src="Image/fogOff.png" alt="fogOff" /></p>
+・フォグがある場合
+<p><img src="Image/fogOn.png" alt="fogOn" /></p>
+<p>しかしこのゲームの場合、このままだとフォグの影響によってスポットライトの光がかき消されてしまい、懐中電灯の恩恵が著しく減ってしまうのだ。</p>
+<p><img src="Image/fogOnSpotLight.png" alt="fogOnSpotLight" /></p>
+そこで、スポットライトの範囲ならば、フォグの影響を受けないという処理を行っている。
+<p>・処理の例</p>
+<pre class="hljs"><code><div>//懐中電灯から頂点への向きを求める。
+float3 toVertexDir = psIn.worldPos - spotLigCameraData.spotLightCameraPos;
+toVertexDir = normalize(toVertexDir);
+//頂点への向きとスポットライトの向きの内積を計算
+float toVertexAngle = dot(toVertexDir, spotLigCameraData.spotLightCameraDir);
+//内積の結果をラジアン角度に変換
+toVertexAngle = acos(toVertexAngle);
+if (toVertexAngle &lt; 0.0f)
+{
+	toVertexAngle *= -1.0f;
+}
+//スポットライトのアングルを求める。
+float spotLigAngle = spotLigCameraData.spotLightCameraAngle;
+spotLigAngle *= 0.5f;
+//スポットライトのアングルの内側ならば
+if (toVertexAngle &lt;= spotLigAngle)
+{
+  //フォグを行わない。
+}
+</div></code></pre>
+<p><img src="Image/fogOffSpotLight.png" alt="fogOffSpotLight" /></p>
+<p>このような処理によって、スポットライトの範囲はフォグの影響を受けなくなる。</p>
+<br>
+<hr>
+<ul>
+<li>
+<h2 id="%E9%80%8F%E8%A6%96%E6%A9%9F%E8%83%BD%E3%81%AE%E3%82%B7%E3%83%AB%E3%82%A8%E3%83%83%E3%83%88%E6%8F%8F%E7%94%BB-a-id%22%E9%80%8F%E8%A6%96%E6%A9%9F%E8%83%BD%E3%81%AE%E3%82%B7%E3%83%AB%E3%82%A8%E3%83%83%E3%83%88%E6%8F%8F%E7%94%BB%22a">透視機能のシルエット描画 <a id="透視機能のシルエット描画"></a></h2>
+</li>
+</ul>
+<p>ゲームを進めると解放される懐中電灯の機能の一つに、<strong>透視機能</strong>がある。<br>
+これは透視を発動している間、<strong>シルエット描画</strong>によって、エネミーやアイテムを壁越し見ることができるという機能である。<br></p>
+<p>この透視処理においても、<strong>深度テクスチャ</strong>が活躍する。<br></p>
+<p>まずメインカメラから透視したいモデルを描画し、深度テクスチャを作る。</p>
+<p><img src="Image/ClairvoyanceDepthMap.png" alt="ClairvoyanceDepthMap" /></p>
+このとき私のゲームの場合は、[距離フォグによる暗闇表現](#距離フォグによる暗闇表現)で説明した計算によって、スポットライトの範囲でのみ深度値を書き込むようにしている。<br>
+透視は懐中電灯の機能なので、スポットライトの光の範囲のみでシルエットを写り込ませるためである。
+<p>次に、ゲームシーンを描画するとき、その深度テクスチャを使って、描画するピクセルの位置の<strong>深度値が0でないとき</strong>(つまりそのピクセルの位置に何か透視できるものがあるとき)、シルエットのカラーにするという処理を行う。<br>
+(私のゲームの場合は、赤い色が表示されるようにしている)</p>
+<p>これによって、スポットライトの光の範囲でこのようなシルエットが浮かび上がる。</p>
+<p><img src="Image/Clairvoyance.png" alt="Clairvoyance" /></p>
+<p>このシルエット描画では、赤色を強めに表示しているため、次に紹介する川瀬式ブルームの効果が表れている。</p>
+<br>
+<hr>
+<ul>
+<li>
+<h2 id="%E5%B7%9D%E7%80%AC%E5%BC%8F%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A0-a-id%22%E5%B7%9D%E7%80%AC%E5%BC%8F%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A0%22a">川瀬式ブルーム <a id="川瀬式ブルーム"></a></h2>
+</li>
+</ul>
+<p>このゲームでは、ポストエフェクトで<strong>川瀬式ブルーム</strong>を行っている。<br>
+これは強い光を放っている物体から、その周りのピクセルに光を溢れさせるというポストエフェクトである。<br>
+これによって実際の画面の明るさ以上に、強い光を疑似的に表現することができる。<br></p>
+<p>このゲームにおいてこの処理の恩恵を大きく受けているのは、<strong>プレイヤーの体力表現</strong>である。<br>
+このゲームはHPバーを表示しておらず、体力が減ってくると少しづつ画面端に白いスプライトを表示している。<br>
+そのスプライトをより強調するために、川瀬式ブルームを活用しているのだ。</p>
+<ul>
+<li>体力がかなり低い状態のとき、スプライトが表示される。この段階ではまだブルームを行っていない。</li>
+</ul>
+<p><img src="Image/BloomNone.png" alt="BloomNone" /></p>
+<br>
+<p>川瀬式ブルームの処理には、まずシーンの輝度を抽出して、輝度テクスチャを作る。</p>
+<p><img src="Image/luminanceSprite.png" alt="luminanceSprite" /></p>
+<br>
+<p>次にその輝度テクスチャに、<strong>ダウンサンプリング</strong>してから、<strong>ブラー</strong>を行うという工程を、今回のゲームでは4回行う。<br>
+ブラーは、ガウス関数によって周りのテクセルへの影響率を計算して画像をぼかす、<strong>ガウシアンブラー</strong>を行っている。<br>
+ダウンサンプリングは、より解像度の低いレンダリングターゲットにテクスチャを張り付けることである。これによってテクスチャの解像度が低くなるため、処理速度が向上する。<br></p>
+<ul>
+<li>1回目</li>
+</ul>
+<p><img src="Image/GaussianBlur01.png" alt="GaussianBlur01" /></p>
+- 2回目
+<p><img src="Image/GaussianBlur02.png" alt="GaussianBlur02" /></p>
+- 3回目
+<p><img src="Image/GaussianBlur03.png" alt="GaussianBlur03" /></p>
+- 4回目
+<p><img src="Image/GaussianBlur04.png" alt="GaussianBlur04" /></p>
+<p>こうして出来上がった4枚のボケ画像を同じ解像度に拡大し、サンプリングする。<br>
+4枚の輝度の平均を求めて出力することで、溢れ表現が実現する。<br></p>
+<p><img src="Image/AddBloomSprite.png" alt="AddBloomSprite" /></p>
+<ul>
+<li>エネミーが強いフラッシュを受けているとき</li>
+</ul>
+<p><img src="Image/StrobeFlashWithEnemy.png" alt="StrobeFlashWithEnemy" /></p>
+<br>
+<hr>
+<ul>
+<li>
+<h2 id="pbr%E3%83%95%E3%82%A3%E3%82%B8%E3%82%AB%E3%83%AB%E3%83%99%E3%83%BC%E3%82%B9%E3%83%89%E3%83%AC%E3%83%B3%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0-a-id%22pbr%E3%83%95%E3%82%A3%E3%82%B8%E3%82%AB%E3%83%AB%E3%83%99%E3%83%BC%E3%82%B9%E3%83%89%E3%83%AC%E3%83%B3%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0%22a">PBR(フィジカルベースドレンダリング) <a id="PBR(フィジカルベースドレンダリング)"></a></h2>
+</li>
+</ul>
+<p><strong>PBR</strong>(<strong>フィジカルベースドレンダリング</strong>)は、近年主流となっているレンダリング方法である。<br>
+物理的にほぼ正しいライティングの計算を行うことで、よりリアルなグラフィックを実現することができるのだ。<br>
+今回のゲームでは、ウォルト・ディズニーが発表した、<strong>Disney Based PBR</strong>を実装している。<br></p>
+<p>このPBRは、<strong>法線マップ</strong>に加えて、<strong>スムース</strong>(<strong>滑らかさ</strong>)や<strong>メタリック</strong>(<strong>金属度</strong>)などのパラメータを用意することでより効果が発揮される。<br>
+今回のゲームでは、ほぼすべてのモデルに法線マップと<strong>スムースメタリックマップ</strong>を用意している。<br>
+スムースメタリックマップは、rにスムース、gにメタリックの値を保持している。</p>
+<ul>
+<li>スムースメタリックを表示した結果。金属度の高い鍵は、gの値が大きいのが分かる。</li>
+</ul>
+<p><img src="Image/smoothMetallic.png" alt="smoothMetallic" /></p>
+<p>PBRでは、<strong>エネルギー保存の法則</strong>と<strong>ヘルムホルツの相反性</strong>の2つの法則を満たす計算が行われている。<br></p>
+<p>ライティングにおけるエネルギー保存の法則は、反射光が入射光より大きくならないという性質である。<br>
+ヘルムホルツの相反性は、入射光の向きとその射出方向が入れ替わっても、射出する光の量が変わらないという性質である。<br></p>
+<p>このゲームでは、鏡面反射は<strong>クック・トランスモデル</strong>、拡散反射はディズニーベースの<strong>フレネル反射</strong>を考慮した計算を行っている。<br></p>
+<ul>
+<li>PBRの計算と、法線マップ・スムースメタリックマップなしの状態</li>
+</ul>
+<p><img src="Image/PBRNone.png" alt="PBRNone" /></p>
+<p><img src="Image/PBRNoneAndEnemy.png" alt="PBRNoneAndEnemy" /></p>
+- PBRの計算と、法線マップ・スムースメタリックマップ実装後
+<p><img src="Image/PBR.png" alt="PBR" /></p>
+<p><img src="Image/PBRandEnemy.png" alt="PBRandEnemy" /></p>
+<br>
+<hr>
+<ul>
+<li>
+<h2 id="%E7%9F%B3%E5%83%8F%E3%81%AE%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0-a-id%22%E7%9F%B3%E5%83%8F%E3%81%AE%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%22a">石像のシェーディング <a id="石像のシェーディング"></a></h2>
+</li>
+</ul>
+<p>石像や石化後のエネミーの描画には、専用のシェーダーを使っている<br>。
+基本的な処理は前述のPBRと同じだが、2つ異なる点がある。<br></p>
+<p>まず1つ目は、albedoColorを石っぽい色合いに統一すること。<br></p>
+<ul>
+<li>処理の例</li>
+</ul>
+<pre class="hljs"><code><div>  //カラーの最大値と最小値を決める。
+	float maxColor = 0.5f;
+	float minColor = 0.2f;
+
+  //アルベドカラーをサンプリングする。
+	float4 albedoColor = g_albedo.Sample(g_sampler, psIn.uv);
+
+	//サンプリングしたアルベドカラーが最大値を超えていたら、最大値に
+	//最小値を下回っていたら、最小値にする。
+	if (albedoColor.x &gt; maxColor)
+		albedoColor.x = maxColor;
+	else if (albedoColor.x &lt; minColor);
+		albedoColor.x = minColor;
+
+	if (albedoColor.y &gt; maxColor)
+		albedoColor.y = maxColor;
+	else if (albedoColor.y &lt; minColor);
+		albedoColor.y = minColor;
+
+	if (albedoColor.z &gt; maxColor)
+		albedoColor.z = maxColor;
+	else if (albedoColor.z &lt; minColor);
+		albedoColor.z = minColor;
+</div></code></pre>
+<p>これによって丁度石っぽい色合いになる。<br>
+ここで最大値と最小値という幅を持たせることで、単調すぎない色合いを作っている。<br></p>
+<p>もう1つの違いは、スムースとメタリックの値を統一することである。<br>
+特にこのエネミーの場合は、肌に赤い血や肉が露わとなっている部分があり、そこはスムースの値がとても大きい。<br>
+そのためそのままの値では、石化したときにその部分だけ見え方が異なってしまうからである。<br></p>
+<p>今回のゲームでは、スムースの値は0.5f、メタリックには0.01fとしている。<br></p>
+<p>あとはそれらのパラメータを使ってPBRの計算を行うことで、石像のシェーディングは完了。<br></p>
+<p><img src="Image/stoneModelShading.png" alt="stoneModelShading" /></p>
+<h1 id="%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%A8%E3%81%97%E3%81%A6%E3%81%AE%E3%81%93%E3%81%A0%E3%82%8F%E3%82%8A%E3%83%BB%E5%B7%A5%E5%A4%AB">ゲームとしてのこだわり・工夫</h1>
+<ul>
+<li>
+<h2 id="%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E9%96%A2%E9%80%A3-a-id%22%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E9%96%A2%E9%80%A3%22a">サウンド関連 <a id="サウンド関連"></a></h2>
+</li>
+</ul>
+<p>このゲームのサウンドは、ほぼ全て<strong>Audiostock</strong>のフリー音源を利用している。<br>
+ただしそのまま音を再生するのではなく、ゲームに合わせた編集を行っている。<br>
+まず迷宮という舞台の雰囲気を演出するため、ほぼ全てのサウンドに<strong>リバーブ</strong>をかけ、反響しているようなサウンドにしている。</p>
+<ul>
+<li>
+<p>元々のドアを開ける音<br>
+<audio src="Sound/OldDoorOpen.wav" controls></audio>
+<br></p>
+</li>
+<li>
+<p>編集後<br>
+<audio src="Sound/DoorOpen.wav" controls></audio>
+<br></p>
+</li>
+</ul>
+<p>また、プレイヤーのボタン入力に合わせて鳴るサウンドは、<strong>レスポンス</strong>を早くしている。<br>
+ボタンを押した瞬間に音が鳴ることで、<strong>操作を気持ちよく</strong>感じてもらえるようにしている。</p>
+<ul>
+<li>
+<p>元々の懐中電灯のスイッチ音(R1ボタン)<br>
+<audio src="Sound/OldFlashLightSwitch.wav" controls></audio>
+<br></p>
+</li>
+<li>
+<p>編集後。<br>
+<audio src="Sound/FlashLightSwitch.wav" controls></audio>
+<br></p>
+</li>
+</ul>
+<p>分かりにくいと思うので、それぞれを0.04倍速にしてみた。</p>
+<ul>
+<li>
+<p>元々の懐中電灯のスイッチ音(R1ボタン) 0.04倍<br>
+<audio src="Sound/OldFlashLightSwitchSlowly.wav" controls></audio>
+<br></p>
+</li>
+<li>
+<p>編集後。 0.04倍<br>
+<audio src="Sound/FlashLightSwitchSlowly.wav" controls></audio>
+<br></p>
+</li>
+</ul>
+<p>編集後の方は、音がすぐに鳴っていることが分かる。<br>
+このような誤差レベルのレスポンスの差でも、実際にボタン入力に当てはめてみると<strong>全く操作感が異なってしまう</strong>のだ。
+<br></p>
+<p>また、<strong>足音</strong>はほぼ常に聞くことになる音なので、様々な音源を聞き比べ、最も気持ちいいものに厳選を行った。<br>
+リバーブや倍速処理も行い、出来る限り心地よい音を目指した。<br>
+加えて、単調にならないよう複数の足音を<strong>ランダム再生</strong>している。<br>
+常に何らかの変化があるというだけで、人間は本能的に楽しい感じるのだ。
+<br></p>
+<p>・足音<br>
+<audio src="Sound/FootStep0.wav" controls></audio>
+<br>
+<audio src="Sound/FootStep1.wav" controls></audio>
+<br>
+<audio src="Sound/FootStep2.wav" controls></audio>
+<br></p>
+<hr>
+<ul>
+<li>
+<h2 id="%E3%82%B2%E3%83%BC%E3%83%A0%E9%80%B2%E8%A1%8C%E3%81%AB%E3%82%88%E3%82%8B%E9%81%8A%E3%81%B3%E6%96%B9%E3%81%AE%E9%81%B7%E7%A7%BB-a-id%22%E3%82%B2%E3%83%BC%E3%83%A0%E9%80%B2%E8%A1%8C%E3%81%AB%E3%82%88%E3%82%8B%E9%81%8A%E3%81%B3%E6%96%B9%E3%81%AE%E9%81%B7%E7%A7%BB%22a">ゲーム進行による遊び方の遷移 <a id="ゲーム進行による遊び方の遷移"></a></h2>
+</li>
+</ul>
+<p>このゲームは、エネミーを上手く避けつつ探索を行い脱出を目指す、<strong>ステルス&amp;ホラー</strong>のゲームである。<br>
+これに加え、ゲームを進めていく中で増えていく懐中電灯の機能よって、その<strong>遊び方に変化が生じるような、メリハリのあるゲームにしたい</strong>と考えた。</p>
+<p>まず始めはまだ懐中電灯に変わった機能はなく、単純に<strong>エネミーに見つからないように探索</strong>を行わなければならない。<br>
+最初に配置されているエネミーはまだ<strong>一体</strong>だけだが、それでもこのゲームは1人称視点であるため、見つからずに行動するのは難易度が高く、かなり慎重なプレイが要求される。<br></p>
+<p>何故1人称視点では難易度が高いのかと言うと、1人称視点は3人称視点と違い、カメラだけを動かすということができないからである。<br>
+3人称視点では基本的に、キャラクターを動かすのはLスティックで、カメラを動かすのはRスティックというのが主流である。カメラの位置はプレイヤーの周囲であるため、本来のプレイヤーの目には見えない筈の場所を見ることも可能なのだ。
+しかし1人称視点ではカメラの位置がプレイヤーの目の位置にあるため、カメラとプレイヤーの動きは同期することになる。つまりカメラを動かしたり回転させたりするということは、キャラクターも動かし回転させるということになるのだ。そのため3人称視点よりも自由に見渡すことができず、1人称視点でのステルスゲームは比較的に難易度が高いのだ。<br>
+<strong>ざっくり言うと、1人称視点は3人称視点より見渡せる範囲が狭いからである。</strong>
+(逆に言えばその視野の狭さゆえ、一人称視点とホラーゲームはとても相性が良いとも言えるのだが)<br></p>
+<p>そうしてゲームを進めていくと、一つ目の機能である&quot;ストロボフラッシュ&quot;が解放される。<br>
+これはバッテリーを一定量消費することで、<strong>強いフラッシュを焚くことができる</strong>機能である。<br>
+このフラッシュを正面からエネミーの顔に当てることで、<strong>相手を怯ませることができる</strong>。<br>
+この機能が加わることで、<strong>エネミーに見つかってもある程度はやり過ごしやすくなる</strong>ので、前より大胆に行動することができるのである。</p>
+<p>更にゲームを進めると次のエリアに到達するのだが、そこでは敵が<strong>2体</strong>徘徊しているため、<strong>再び慎重に</strong>なる必要がある。<br>
+あまり&quot;ストロボフラッシュ&quot;に頼りすぎるとすぐにバッテリーが尽きてしまうため、大胆な行動をし過ぎると敵の餌食となってしまうだろう。<br>
+しかしこのエリアにある、2つ目の機能が拡張されると、大分楽になるはずだ。ここで解放されるのは<strong>透視機能</strong>&quot;クレアボヤンス&quot;である。<br>
+壁越しでエネミーの位置を把握することができるようになるため、エネミーに<strong>見つからないように行動しやすくなる</strong>のだ。<br></p>
+<p>そして次のエリアでは、配置されるエネミーが<strong>3体</strong>となる。<br>
+&quot;クレアボヤンス&quot;を駆使してしても尚、難易度の高いステルスプレイとなるので、やはり<strong>またも慎重さが必要</strong>となる。<br></p>
+<p>というような構成になっており、定期的に遊び方に<strong>メリハリと変化</strong>がもたらされることで、ゲームプレイに<strong>新鮮さ</strong>を与え続けているのだ。<br></p>
+<hr>
+<ul>
+<li>
+<h2 id="%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B8%E3%81%AE%E8%A6%8B%E6%A0%84%E3%81%88-a-id%22%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B8%E3%81%AE%E8%A6%8B%E6%A0%84%E3%81%88%22a">ステージの見栄え <a id="ステージの見栄え"></a></h2>
+</li>
+</ul>
+<p>ゲームの雰囲気を演出するため、ステージにも様々な工夫を施している。<br>
+その例をいくつか紹介。<br></p>
+<ul>
+<li>所々、壁や地面に血の跡がある。<br></li>
+<li>この跡がある場所はエネミーが徘徊しているエリアのみ。つまり恐怖を演出する要素であると同時に、エネミーがいるという<strong>目印でもある</strong>のだ。<br></li>
+</ul>
+<p><img src="Image/StageBlood.png" alt="StageBlood" /></p>
+<br>
+<ul>
+<li>要所要所に配置されている骸骨。<br>
+過去にこの主人公以外にも人が来ていたということだろうか、などと<strong>バックボーンを想像させる</strong>要素でもある。</li>
+</ul>
+<p><img src="Image/DeadSkeleton.png" alt="DeadSkeleton" /></p>
+<br>
+<ul>
+<li>ゲーム終盤に配置されているエネミー型の石像。<br>
+最後に使えるようになる、懐中電灯の石化フラッシュ機能の<strong>伏線</strong>となっている。<br></li>
+</ul>
+<p><img src="Image/Statue.png" alt="Statue" /></p>
+<br>
+<hr>
+<ul>
+<li>
+<h2 id="%E8%BF%91%E5%B9%B4%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%B8%E3%81%AE%E3%83%AA%E3%82%B9%E3%83%9A%E3%82%AF%E3%83%88%E3%81%A8%E5%BD%B1%E9%9F%BF%E5%8F%97%E3%81%91%E3%81%9F%E8%A6%81%E7%B4%A0-a-id%22%E8%BF%91%E5%B9%B4%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%B8%E3%81%AE%E3%83%AA%E3%82%B9%E3%83%9A%E3%82%AF%E3%83%88%E3%81%A8%E5%BD%B1%E9%9F%BF%E5%8F%97%E3%81%91%E3%81%9F%E8%A6%81%E7%B4%A0%22a">近年のゲームへのリスペクトと影響受けた要素 <a id="近年のゲームへのリスペクトと影響受けた要素"></a></h2>
+</li>
+</ul>
+<p>このゲームは、近年の様々なゲーム作品から影響を受けたシステムや、リスペクトした演出を取り入れている。<br>
+本来は実際にこのゲームを触ってもらってそれを見て欲しいのだが、折角なので紹介しようと思う。<br></p>
+<p>まず、<a href="#%E3%82%B9%E3%83%9D%E3%83%83%E3%83%88%E3%83%A9%E3%82%A4%E3%83%88%E3%81%AE%E5%BD%B1%E7%94%9F%E6%88%90">スポットライトの影生成</a>の項目でも書いたように、バイオ7からの影響を強く受けている。<br>
+ダッシュが前方方向(Lスティックを前に倒しているとき)にしか行えない点や、エネミーに追いつかれたときにカメラが強制的に相手の方を振り向いたりするのは、バイオ7を参考にしている。<br></p>
+<p>次に影響を受けているのは、&quot;<strong>THE LAST OF US</strong>&quot;(以降ラスアス)である。&quot;THE ESCAPE&quot;の全体的な演出やSEは、ラスアスを意識しているものが多い。<br>
+また、懐中電灯の機能の一つである透視能力を実装することに決めたことにも、ラスアスの影響が大きい。<br></p>
+<p>この透視システムについては他にも、&quot;<strong>ウィッチャー3 ワイルドハント</strong>&quot;や&quot;<strong>Marvel's Spider-Man</strong>&quot;、&quot;<strong>ゴーストオブツシマ</strong>&quot;など、似たシステムがあるゲームが増えており、近年の主流なシステムの一つだと感じていたため、実装することに決めた経緯がある。<br></p>
+<p>また、<a href="#%E3%82%B2%E3%83%BC%E3%83%A0%E9%80%B2%E8%A1%8C%E3%81%AB%E3%82%88%E3%82%8B%E9%81%8A%E3%81%B3%E6%96%B9%E3%81%AE%E9%81%B7%E7%A7%BB">ゲーム進行による遊び方の遷移</a>について述べたが、このようなゲームの進め方は&quot;<strong>メトロイドシリーズ</strong>&quot;を意識したものである。<br>
+探索をしてパワーアップアビリティを入手し、そのアビリティで更に探索を行うというゲームの流れを、懐中電灯の機能の解放という形で実現している。<br>
+また、「特定のエリアを徘徊するエネミーがいて、通りたくないけどゲームを進めるためにはそのエリアを何度も通る必要がある」というジレンマのある仕組みは&quot;<strong>メトロイドドレッド</strong>&quot;を参考にしている。<br></p>
+<p>これらのゲームは全て今まで私がプレイしたことのあるゲームで、細かい部分では私自身も気付いていないところでもっと様々なゲームから影響を受けていると思う。<br>
+&quot;THE ESCAPE&quot;はそういった私のゲームの経験や知識を活かして制作された作品なのだ。<br></p>
+<hr>
+<ul>
+<li>
+<h2 id="%E3%81%82%E3%81%88%E3%81%A6%E5%AE%9F%E8%A3%85%E3%82%92%E3%82%84%E3%82%81%E3%81%9F%E8%A6%81%E7%B4%A0-a-id%22%E3%81%82%E3%81%88%E3%81%A6%E5%AE%9F%E8%A3%85%E3%82%92%E3%82%84%E3%82%81%E3%81%9F%E8%A6%81%E7%B4%A0%22a">あえて実装をやめた要素 <a id="あえて実装をやめた要素"></a></h2>
+</li>
+</ul>
+<p>私が今回のゲームを作るにあたって、あえて実装しないことに決めた要素がいくつかある。<br></p>
+<p>まず一つがオートカメラである。<br>
+これはプレイヤーを動かしたときに、その方向を正面にしようと自動でカメラが動いてくれるシステムである。<br>
+これは過去に別のゲームで実装した経験があり、私が本格的な3Dのゲームを作る時に是非取り入れたいと思っていたシステムであった。<br>
+しかしFPS視点である今回のゲームには合わなかったため、残念ながら採用するのを諦めた。<br></p>
+<p>次に、平行光源(太陽光)によるシャドウイングである。<br>
+これについては、<strong>デプスシャドウ</strong>や<strong>VSM</strong>(<strong>分散シャドウマップ</strong>)によるソフトシャドウも完成していた。<br>
+しかし今回のゲームは屋内が舞台となり、また<a href="#%E3%82%B9%E3%83%9D%E3%83%83%E3%83%88%E3%83%A9%E3%82%A4%E3%83%88%E3%81%AE%E5%BD%B1%E7%94%9F%E6%88%90">スポットライトの影生成</a>もできていたため、名残惜しかったが使用しないこととなった。<br></p>
+<p>あえて、やめることをやめた要素もある。<br>
+元々、アイテムに<strong>きらりと光るエフェクト</strong>を付けて、分かりやすいようにしようと考えていた。<br>
+しかし近年の&quot;<strong>バイオハザードシリーズ</strong>&quot;はリアリティを重視し、あえてそういった<strong>エフェクトを付けない</strong>という傾向があり、それを知ったため、光るエフェクトは実装はやめることにした。
+<br>
+だが実際に私のゲームを遊んでみると、重要なアイテムを見逃してしまったとき、無意味に広いステージを彷徨うことになってしまう。<br>
+そうなると、致命的に楽しくなくなってしまう可能性があるため、やはり<strong>エフェクトを付けるべき</strong>だと考えて実装を行った。<br></p>
+
+</body>
+</html>
